@@ -13,3 +13,18 @@ Route::get('/dashboard', function () {
 
 
 require __DIR__.'/auth.php';
+use App\Http\Controllers\CayCanhController;
+
+
+
+Route::get('/', [HomeController::class, 'index']);
+
+
+Route::get('caycanh/theloai/{id}', function($id) {
+    return app(HomeController::class)->index(request()->merge(['id_danh_muc' => $id]));
+});
+
+
+Route::get('/chi-tiet/{id}', [HomeController::class, 'detail']);
+
+Route::post('/timkiem', [HomeController::class, 'index']);
