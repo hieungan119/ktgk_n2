@@ -109,6 +109,12 @@
             display:grid;
             grid-template-columns:repeat(2,30% 70%);
         }
+        .price-style 
+        {
+            color: #d9534f !important;
+            font-style: italic !important;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
