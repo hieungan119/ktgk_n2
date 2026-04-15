@@ -6,22 +6,19 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 use Illuminate\Support\Facades\DB;
+
 class CayCanhLayout extends Component
 {
-    /**
-     * Create a new component instance.
-     */
     public $categories;
- 
-    public function __construct()
+    public $title;
+
+    public function __construct($title = "Green Garden")
     {
-        //
+        $this->title = $title;
+        // Lấy danh mục từ bảng danh_muc trong file SQL của bạn
         $this->categories = DB::table("danh_muc")->get();
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     */
     public function render(): View|Closure|string
     {
         return view('components.cay-canh-layout');
