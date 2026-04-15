@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ControllerNhien;
+use App\Http\Controllers\MnhuController1;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ManagementController;
 use App\Http\Controllers\CayCanhController;
@@ -14,9 +15,10 @@ Route::get('/gio-hang', [ControllerNhien::class, 'order'])->name('order');
 Route::post('/cart/delete','App\Http\Controllers\ControllerNhien@cartdelete')->name('cartdelete');
 Route::post('/order/create','App\Http\Controllers\ControllerNhien@ordercreate') ->middleware('auth')->name('ordercreate');
 Route::get('/testemail','App\Http\Controllers\ControllerNhien@testemail');
-
+Route::match(['GET', 'POST'], '/timkiem', [MnhuController1::class, 'search']);
 
 Route::get('/dashboard', function () {
+    return redirect('/');           
 
 })->middleware(['auth', 'verified'])->name('dashboard');
 
