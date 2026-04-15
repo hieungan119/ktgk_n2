@@ -43,7 +43,7 @@ class AddPlantsController extends Controller
         $imageName = time() . '_' . preg_replace('/\s+/', '_', $imageFile->getClientOriginalName());
 
         // Lưu ảnh vào storage/app/public
-        $imageFile->storeAs('', $imageName, 'public');
+        $imageFile->storeAs('public/image', $imageName);
 
         // Tạo mã sản phẩm tự động
         $code = 'SP' . strtoupper(Str::random(6));

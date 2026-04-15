@@ -10,7 +10,7 @@
     <div class="list-cay-canh">
         @foreach($data as $item)
             <div class="cay-canh">
-                <a href="{{ url('/chi-tiet/'.$item->id) }}">
+                <a href="{{ url('/home/detail/'.$item->id) }}">
                     <img src="{{ asset('storage/image/'.$item->hinh_anh) }}" 
                          onerror="this.src='{{ asset('images/'.$item->hinh_anh) }}'"
                          width="100%" height="160px" style="object-fit: cover;">
